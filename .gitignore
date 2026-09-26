@@ -1,7 +1,18 @@
-.venv/
+# Python
 __pycache__/
 *.pyc
+.venv/
+venv/
+
+# Streamlit
 .streamlit/
+
+# Données brutes volumineuses (à ne pas versionner si > limite GitHub, sinon commente ces lignes)
+# data/raw/*.csv
+
+# Rapport / exports
 report/*.pdf
 report/slide-*.jpg
+
+# OS
 .DS_Store
