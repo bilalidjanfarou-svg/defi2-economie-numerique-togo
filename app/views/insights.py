@@ -24,7 +24,7 @@ def insight_card(num, title, text, figure=None, figure_label=None, link_page=Non
     if figure:
         st.markdown(f'<div class="insight-figure">{figure}</div><div style="color:{PALETTE["muted"]}; font-size:0.8rem; margin-bottom:0.8rem;">{figure_label}</div>', unsafe_allow_html=True)
     if link_page:
-        st.page_link(link_page, label=link_label, icon="→")
+        st.page_link(link_page, label=link_label, icon="➡️")
     card_close()
     st.write("")
 

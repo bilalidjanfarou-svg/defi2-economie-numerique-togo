@@ -20,8 +20,41 @@ def apply_theme():
         section[data-testid="stSidebar"] {{ background-color: {PALETTE['navy']}; }}
         section[data-testid="stSidebar"] * {{ color: #D7DEE9 !important; }}
         section[data-testid="stSidebar"] .stMarkdown p {{ color: #8FA3C4 !important; }}
-        section[data-testid="stSidebar"] [data-testid="stPageLink-NavLink"] {{
-            border-radius: 8px;
+
+        /* En-têtes de section générés par st.navigation ("Données", "Explorer") */
+        section[data-testid="stSidebar"] [data-testid="stNavSectionHeader"] {{
+            color: #6C82A8 !important; font-size: 0.72rem !important; font-weight: 700 !important;
+            letter-spacing: 1.2px; text-transform: uppercase; margin: 1.1rem 0 0.3rem 0.3rem !important;
+        }}
+
+        /* Liens de navigation générés par st.navigation — cartes cliquables avec hover et état actif */
+        section[data-testid="stSidebar"] [data-testid="stSidebarNavLink"] {{
+            border-radius: 10px !important;
+            padding: 0.55rem 0.8rem !important;
+            margin: 0.18rem 0 !important;
+            cursor: pointer !important;
+            border: 1px solid transparent !important;
+            transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+        }}
+        section[data-testid="stSidebar"] [data-testid="stSidebarNavLink"]:hover {{
+            background-color: rgba(23, 162, 184, 0.16) !important;
+            border-color: rgba(23, 162, 184, 0.35) !important;
+        }}
+        section[data-testid="stSidebar"] [data-testid="stSidebarNavLink"]:active {{
+            transform: scale(0.98);
+        }}
+        section[data-testid="stSidebar"] [data-testid="stSidebarNavLink"][aria-current="page"] {{
+            background-color: {PALETTE['teal']} !important;
+            border-color: {PALETTE['teal']} !important;
+        }}
+        section[data-testid="stSidebar"] [data-testid="stSidebarNavLink"][aria-current="page"] * {{
+            color: #FFFFFF !important; font-weight: 600 !important;
+        }}
+        section[data-testid="stSidebar"] [data-testid="stSidebarNavLink"][aria-current="page"]:hover {{
+            background-color: {PALETTE['teal']} !important;
+        }}
+        section[data-testid="stSidebar"] hr {{
+            border-color: rgba(255,255,255,0.12) !important; margin: 0.9rem 0 !important;
         }}
 
         .page-eyebrow {{ color: {PALETTE['teal']}; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.2rem; }}
